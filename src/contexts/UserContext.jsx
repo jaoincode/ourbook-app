@@ -11,7 +11,19 @@ export const UserProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
+  const fakeLoginToTests = () => {
+    localStorage.setItem(
+      'token',
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsaWNlQGVtYWlsLmNvbSIsImlhdCI6MTY2MjAzNjczNywiZXhwIjoxNjY0NjI4NzM3fQ.QlPlYN9bLA2-Tw_3z-YgFFInU9UZKM6V2IfROE6WDfg'
+    );
+    localStorage.setItem(
+      'user',
+      '{"user": {"_id": "6310aaed646a513471b03061","name": "Alice","email": "alice@email.com","password": "$2b$10$6MS4KRhLXeFRg.zeQI/hNescp1H.El3Ixx8oKf.Q4CEgBZbsBF.wu","created_at": "2022-09-01T12:40:01.833Z","updated_at": "2022-09-01T12:40:01.833Z","__v": 0},"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsaWNlQGVtYWlsLmNvbSIsImlhdCI6MTY2MjAzNjczNywiZXhwIjoxNjY0NjI4NzM3fQ.QlPlYN9bLA2-Tw_3z-YgFFInU9UZKM6V2IfROE6WDfg"}'
+    );
+  };
+
   useEffect(() => {
+    fakeLoginToTests();
     const recoveredUser = localStorage.getItem('user');
 
     if (recoveredUser) setUser(JSON.parse(recoveredUser));
