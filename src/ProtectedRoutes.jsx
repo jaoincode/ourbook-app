@@ -35,7 +35,6 @@ function ProtectedRoutes() {
             }
           />
         </Routes>
-        <Footer />
       </UserProvider>
     </BrowserRouter>
   );

@@ -3,10 +3,12 @@ import { useNavigate } from 'react-router-dom';
 import styles from './index.module.scss';
 import Input from '../../components/Form/Input';
 import { UserContext } from '../../contexts/UserContext';
+import Footer from '../../components/Footer';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const { authenticated, login, error } = useContext(UserContext);
 
@@ -14,7 +16,9 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const response = login(email, password);
+    setLoading(true);
+    login(email, password);
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -23,6 +27,7 @@ function Login() {
 
   return (
     <section className={styles.loginSection}>
+      {loading && <h1>Loading</h1>}
       <div className={styles.welcome}>
         <h1 className={styles.title}>Ourbook</h1>
         <p className={styles.welcomeMessage}>
@@ -55,6 +60,7 @@ function Login() {
           Create new account
         </button>
       </div>
+      <Footer />
     </section>
   );
 }

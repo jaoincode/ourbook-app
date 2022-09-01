@@ -4,12 +4,14 @@ import styles from './index.module.scss';
 import Input from '../../components/Form/Input';
 import { UserContext } from '../../contexts/UserContext';
 import { registerAccount } from '../../services/auth';
+import Footer from '../../components/Footer';
 
 function Register() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const { authenticated } = useContext(UserContext);
   const navigate = useNavigate();
@@ -25,11 +27,14 @@ function Register() {
     else if (password.length < 8) return setError('Your password is too short');
 
     const registerUser = async (name, email, password) => {
+      setLoading(true);
       const response = await registerAccount(name, email, password);
       if (!response.data.error) {
         navigate('/login');
+        setLoading(false);
       } else {
         setError(response.data.error);
+        setLoading(false);
       }
     };
 
@@ -38,6 +43,7 @@ function Register() {
 
   return (
     <section className={styles.registerSection}>
+      {loading && <h1>Loading</h1>}
       <div className={styles.welcome}>
         <h1 className={styles.title}>Ourbook</h1>
         <p className={styles.welcomeMessage}>
@@ -77,6 +83,7 @@ function Register() {
           Login in your account
         </button>
       </div>
+      <Footer />
     </section>
   );
 }
