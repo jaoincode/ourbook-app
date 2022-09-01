@@ -1,0 +1,85 @@
+@import '../../styles/utils';
+@import '../../styles/colors';
+
+.loginSection {
+  width: 100vw;
+  height: calc(100vh - 50px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $primary-white;
+}
+
+.welcome {
+  text-align: left;
+  width: 500px;
+}
+
+.title {
+  font-size: 72px;
+  color: $blue-three;
+  margin-bottom: 10px;
+}
+
+.welcomeMessage {
+  font-size: $font-medium;
+}
+
+.loginContainer {
+  width: 450px;
+  box-shadow: 0 5px 20px 1px rgba(0, 0, 0, .2);
+  padding: 40px 20px;
+  background: $white;
+  border-radius: 10px;
+}
+
+.loginContainer button {
+  border-radius: 5px;
+  width: 100%;
+  height: 50px;
+  border: none;
+  font-size: $font-medium-small;
+  font-weight: bold;
+  background: $blue-five;
+  color: $white;
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.loginContainer button.createAccount {
+  background: $green-one;
+  margin-bottom: 0;
+}
+
+.loginContainer button:hover { background: $blue-five-light; }
+.loginContainer button.createAccount:hover { background: $green-one-light; }
+
+@media (max-width: 980px) {
+  .loginSection {
+    flex-direction: column;
+  }
+  
+  .welcome {
+    text-align: center;
+    width: 300px;
+  }
+
+  .title {
+    font-size: $font-big;
+    margin-bottom: 5px;
+  }
+  
+  .welcomeMessage {
+    font-size: $font-small;
+    margin-bottom: 30px;
+  }
+
+  .loginContainer {
+    width: 300px  ;
+  }
+
+  .loginContainer button {
+    height: 40px;
+  }
+}
