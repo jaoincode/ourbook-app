@@ -5,6 +5,7 @@ import Timeline from '../../components/Timeline';
 import Footer from '../../components/Footer';
 import Post from '../../components/Post';
 import { getAllPosts } from '../../services/posts';
+import NewPost from '../../components/NewPost';
 
 function Home() {
   const [posts, setPosts] = useState([]);
@@ -12,6 +13,7 @@ function Home() {
 
   useEffect(() => {
     getFakePosts();
+    // getPosts();
   }, []);
 
   const getPosts = async () => {
@@ -86,6 +88,7 @@ function Home() {
           <h2 className={styles.noMore}>No posts</h2>
         </Timeline>
       </div>
+      <NewPost />
       <Footer />
     </section>
   );

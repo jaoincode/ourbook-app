@@ -1,12 +1,10 @@
-import React from 'react';
+import { UserContext, UserProvider } from './contexts/UserContext';
+import React, { useState, useContext } from 'react';
 import { Routes, Route, Navigate, BrowserRouter } from 'react-router-dom';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Home from './pages/Home';
-import Footer from './components/Footer';
-import { UserContext, UserProvider } from './contexts/UserContext';
-import { useContext } from 'react';
-import { useState } from 'react';
+import CreatePost from './pages/CreatePost';
 
 function ProtectedRoutes() {
   const [loading, setLoading] = useState(false);
@@ -31,6 +29,14 @@ function ProtectedRoutes() {
             element={
               <Private>
                 <Home />
+              </Private>
+            }
+          />
+          <Route
+            path="/create"
+            element={
+              <Private>
+                <CreatePost />
               </Private>
             }
           />
