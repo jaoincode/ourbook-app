@@ -1,0 +1,49 @@
+@import '../../styles/colors';
+@import '../../styles/utils';
+
+.createPostSection {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.text {
+  margin-top: 60px;
+  z-index: 1;
+  width: 100%;
+  max-width: 640px;
+  height: calc(100vh - 60px);
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.postText {
+  margin-bottom: 10px;
+  border: 2px solid $blue-five;
+  border-radius: 10px;
+  height: 250px;
+  padding: 10px;
+  font-size: $font-small;
+  resize: none;
+}
+
+.sendPost {
+  background: $blue-five;
+  border: none;
+  border-radius: 10px;
+  height: 40px;
+  font-size: $font-small;
+  color: $white;
+  outline: none;
+  transition: background .2s;
+  cursor: pointer;
+}
+
+.sendPost:hover {
+  background: $blue-five-light;
+}
+

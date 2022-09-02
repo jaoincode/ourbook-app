@@ -1,0 +1,79 @@
+@import '../../styles/colors';
+@import '../../styles/utils';
+
+.profileSection {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.profile {
+  margin-top: 60px;
+  padding: 10px;
+  width: 100%;
+  max-width: 640px;
+  height: 150px;
+}
+
+.all {
+  padding: 10px;
+  border: 2px solid $green-two;
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.userStats {
+  width: 50%;
+  height: 100%;
+  text-align: left;
+
+  h1 {
+    font-size: $font-small;
+  }
+
+  h3 {
+    font-size: $font-extra-small;
+  }
+}
+
+.logoutBtn {
+  width: 110px;
+  height: 30px;
+  background: red;
+  border: none;
+  border-radius: 5px;
+  color: $white;
+  font-size: 17px;
+  cursor: pointer;
+
+}
+
+.logoutBtn:hover {
+  background: #d70000;
+}
+
+.postsHeader {
+  margin-left: 20px;
+}
+
+.timelineContainer {
+  text-align: left;
+  margin-top: 10px;
+  z-index: 1;
+  width: 100%;
+  max-width: 640px;
+}
+
+
+
+.noPosts {
+  margin-top: 30px;
+  font-weight: 500;
+  color: gray;
+  font-size: $font-small;
+}

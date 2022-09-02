@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const auth = axios.create({
-  baseURL: 'http://localhost:3000/user',
+  baseURL: 'https://ourbook-api.herokuapp.com/user',
 });
 
 export const registerAccount = async (name, email, password) => {
@@ -17,4 +17,8 @@ export const loginAccount = async (email, password) => {
     email,
     password,
   });
+};
+
+export const getUser = async (id) => {
+  return auth.get(`/${id}`);
 };

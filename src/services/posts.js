@@ -1,9 +1,25 @@
 import axios from 'axios';
 
 export const posts = axios.create({
-  baseURL: 'http://localhost:3000/posts',
+  baseURL: 'https://ourbook-api.herokuapp.com/posts',
 });
 
 export const getAllPosts = async () => {
   return posts.get('/');
+};
+
+export const newPost = async (body) => {
+  return posts.post(
+    '/',
+    { body: body },
+    {
+      headers: {
+        'x-access-token': JSON.parse(localStorage.getItem('token')),
+      },
+    }
+  );
+};
+
+export const getUserPosts = async (id) => {
+  return posts.get(`/${id}`);
 };

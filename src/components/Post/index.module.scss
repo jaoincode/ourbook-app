@@ -14,9 +14,10 @@
   margin-bottom: 20px;
 }
 
-.author { 
-  font-size: $font-extra-small;
+.author h2 { 
+  text-decoration: none;
   margin-bottom: 20px;
+  font-size: 20px;
   color: $primary-darker;
   border-bottom: 2px solid $primary-darker;
 }
@@ -28,6 +29,6 @@
 
 @media (max-width: 640px) {
   .post { padding: 20px 10px; }
-  .author { margin-bottom: 10px; }
+  .author > h2 { margin-bottom: 10px; font-size: $font-extra-small; }
   .postContent { font-size: $font-extra-small;}
 }
