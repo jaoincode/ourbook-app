@@ -4,7 +4,7 @@
 
 .post {
   background: $white;
-  padding: 40px 20px;
+  padding: 40px 20px 10px;
   border-radius: 10px;
   border: 2px solid $blue-five;
   width: 100%;
@@ -12,6 +12,17 @@
   flex-direction: column;
   align-items: flex-start;
   margin-bottom: 20px;
+}
+
+.heart {
+  margin-top: 20px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.fill {
+  transition:  .3s;
+  color: red;
 }
 
 .author h2 { 
@@ -27,8 +38,40 @@
   font-size: $font-small;
 }
 
+.clickContainer {
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.likeContainer {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  margin-top: 10px;
+  height: 100%;
+}
+
+.likeContainer::before {
+  content: '';
+  position: absolute;
+  margin-bottom: 10px;
+  top: 0;
+  left: 0;
+  background: gray;
+  width: 100%;
+  border-radius: 10px;
+  height: 2px;
+}
+
 @media (max-width: 640px) {
-  .post { padding: 20px 10px; }
+  .post { padding: 20px 10px 10px; }
   .author > h2 { margin-bottom: 10px; font-size: $font-extra-small; }
+  .heart {
+    margin-top: 10px;
+    font-size: 20px;
+  }
   .postContent { font-size: $font-extra-small;}
 }

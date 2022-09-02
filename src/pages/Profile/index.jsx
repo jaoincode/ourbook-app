@@ -38,7 +38,7 @@ function Profile() {
 
   const getPosts = async (id) => {
     const response = await getUserPosts(id);
-    setPosts(response.data.posts);
+    setPosts(response.data.posts.reverse());
   };
 
   const getActualUser = async (id) => {
