@@ -1,6 +1,6 @@
 import styles from './index.module.scss';
 import React, { useEffect, useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
 import { deletePost } from '../../services/posts';
 import { GrClose } from 'react-icons/gr';
@@ -8,6 +8,8 @@ import { GrClose } from 'react-icons/gr';
 function Post({ author, content, id, postId }) {
   const [like, setLike] = useState(false);
   const [isOwner, setIsOwner] = useState(false);
+
+  const navigate = useNavigate();
 
   const handleLike = () => {
     setLike(!like);
@@ -17,6 +19,7 @@ function Post({ author, content, id, postId }) {
     const confirmMsg = confirm('Are you sure you want to delete the post?');
     if (confirmMsg) {
       await deletePost(postId);
+      navigate('/');
       location.reload();
     }
     return;
