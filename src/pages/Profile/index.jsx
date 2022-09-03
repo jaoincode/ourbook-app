@@ -78,7 +78,12 @@ function Profile() {
             <h2 className={styles.noPosts}>No posts found :(</h2>
           )}
           {posts.map((post) => (
-            <Post key={post._id} content={post.body} id={post.author} />
+            <Post
+              key={post._id}
+              content={post.body}
+              id={post.author}
+              postId={post._id}
+            />
           ))}
         </Timeline>
       </div>
