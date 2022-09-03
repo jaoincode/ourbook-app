@@ -23,3 +23,11 @@ export const newPost = async (body) => {
 export const getUserPosts = async (id) => {
   return posts.get(`/${id}`);
 };
+
+export const deletePost = async (id) => {
+  return posts.delete(`/${id}`, {
+    headers: {
+      'x-access-token': JSON.parse(localStorage.getItem('token')),
+    },
+  });
+};

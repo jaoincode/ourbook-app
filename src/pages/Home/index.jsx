@@ -32,6 +32,7 @@ function Home() {
           {posts.map((post) => (
             <Post
               key={post._id}
+              postId={post._id}
               author={post.owner}
               content={post.body}
               id={post.author}
