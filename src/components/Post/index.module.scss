@@ -36,6 +36,9 @@
 .postContent {
   text-align: left;
   font-size: $font-small;
+  width: 100%;
+  max-width: 100%;
+  word-wrap: break-word;
 }
 
 .clickContainer {
