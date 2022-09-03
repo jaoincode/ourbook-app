@@ -6,6 +6,7 @@ import Footer from '../../components/Footer';
 import Post from '../../components/Post';
 import { getAllPosts } from '../../services/posts';
 import NewPost from '../../components/NewPost';
+import Loading from '../Loading';
 
 function Home() {
   const [posts, setPosts] = useState([]);
@@ -27,7 +28,7 @@ function Home() {
       <Navbar />
       <div className={styles.timelineContainer}>
         <Timeline>
-          {loading && <h1>Loading</h1>}
+          {loading && <Loading />}
           {posts.map((post) => (
             <Post
               key={post._id}

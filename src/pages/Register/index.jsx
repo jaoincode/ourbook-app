@@ -5,6 +5,7 @@ import Input from '../../components/Form/Input';
 import { UserContext } from '../../contexts/UserContext';
 import { registerAccount } from '../../services/auth';
 import Footer from '../../components/Footer';
+import Loading from '../Loading';
 
 function Register() {
   const [name, setName] = useState('');
@@ -31,11 +32,10 @@ function Register() {
       const response = await registerAccount(name, email, password);
       if (!response.data.error) {
         navigate('/login');
-        setLoading(false);
       } else {
         setError(response.data.error);
-        setLoading(false);
       }
+      setLoading(false);
     };
 
     registerUser(name, email, password);
@@ -43,7 +43,7 @@ function Register() {
 
   return (
     <section className={styles.registerSection}>
-      {loading && <h1>Loading</h1>}
+      {loading && <Loading />}
       <div className={styles.welcome}>
         <h1 className={styles.title}>Ourbook</h1>
         <p className={styles.welcomeMessage}>
