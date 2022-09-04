@@ -19,6 +19,7 @@ function Post({ author, content, id, postId }) {
     const confirmMsg = confirm('Are you sure you want to delete the post?');
     if (confirmMsg) {
       await deletePost(postId);
+      navigate('/');
       location.reload();
     }
     return;
