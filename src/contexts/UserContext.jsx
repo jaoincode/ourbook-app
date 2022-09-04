@@ -10,11 +10,15 @@ export const UserProvider = ({ children }) => {
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    const recoveredUser = localStorage.getItem('user');
+    getRecoveredUser();
+  }, []);
+
+  const getRecoveredUser = async () => {
+    const recoveredUser = await localStorage.getItem('user');
 
     if (recoveredUser) setUser(JSON.parse(recoveredUser));
     setLoading(false);
-  }, []);
+  };
 
   const login = async (email, password) => {
     try {

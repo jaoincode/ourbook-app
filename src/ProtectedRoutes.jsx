@@ -6,12 +6,13 @@ import Register from './pages/Register';
 import Profile from './pages/Profile';
 import Login from './pages/Login';
 import Home from './pages/Home';
+import Loading from './pages/Loading';
 
 function ProtectedRoutes() {
   function Private({ children }) {
     const { authenticated, loading } = useContext(UserContext);
 
-    if (loading) return <h1>Loading</h1>;
+    if (loading) return <Loading />;
     if (!authenticated) return <Navigate to="/login" />;
     return children;
   }
