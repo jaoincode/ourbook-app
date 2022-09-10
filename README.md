@@ -16,3 +16,9 @@
 
 #### demonstração em vídeo:
 <a href="https://www.youtube.com/shorts/fWRxEUfchNI" target="_blank">Ver vídeo</a>
+
+#### screenshots:
+<div style="display: flex">
+  <img src="https://user-images.githubusercontent.com/92704272/188460598-b1c3079c-8d39-4472-8aff-ecce5a766fe0.png" />
+  <img src="https://user-images.githubusercontent.com/92704272/188460603-57d3e06a-92c7-4a87-9299-6901949dd3dd.png" />
+</div>
