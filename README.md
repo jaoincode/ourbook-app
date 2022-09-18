@@ -1,7 +1,7 @@
 # ourbook-app
 ### Desenvolvido em React.JS este é um projeto com o intuíto de fazer uma mini "rede social", tendo o front-end e o back-end.
-<p>Para o back-end eu desenvolvi uma api usando MongoDB e NodeJS, que você pode fazer o download aqui:</p>
-<a href="#">Back-end repositório</a>
+<p>O backend desta aplicação foi desenvolvido por mim usando Express, NodeJS e MongoDB</p>
+
 
 <p>Neste projeto temos as opções de:</p>
 <ul>
